@@ -73,8 +73,9 @@
         }
 
         section h1 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            font-weight: 300;
             font-family: 'Herr Von Muellerhoff', cursive;
             font-family: 'Homemade Apple', cursive;
         }
@@ -84,6 +85,8 @@
             color: #777;
             line-height: 1.6;
         }
+
+
 
         /* Footer styling */
         footer {
@@ -101,14 +104,43 @@
             height: 1020px;
             transform: rotate(-90deg);
             margin-top: -100px;
+            object-fit: cover;
 
+        }
 
+        #about {
+            display: flex;
+            flex-direction: row;
+            /* Reverse the order of text and image */
+            align-items: normal;
         }
 
         #about img {
             max-width: 150px;
             /* Adjust the width as needed */
-            height: auto;
+            height: 190px;
+            margin-left: 8rem;
+            margin-top: 100x;
+            padding-right: 2%;
+
+        }
+
+        /* Adjustments for heading and text */
+        #about div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #about h1 {
+            margin: 0;
+            margin-bottom: 0.2rem;
+            /* Add margin at the bottom of the heading */
+        }
+
+        #about p {
+            margin: 0;
+            margin-top: 0.2rem;
+            /* Add some spacing between heading and text */
         }
 
         #contact img {
@@ -147,8 +179,8 @@
     <div class="sidebar">
         <img src="s2.png" alt="My pfp">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -162,8 +194,19 @@
 
         <section id="about">
             <img src="pfp.jpg" alt="My art">
-            <h1>About Me</h1>
-            <p>Write a brief introduction about yourself here.</p>
+            <div>
+                <h1>About Me</h1>
+                <p>Hi there! I'm Stella, a second year Computer Science student at Otago University. I enjoy coding in
+                    my free time as well as
+                    painting,chess and sports. I am also an executive member for the Otago Singpore Club and the Otago
+                    Computer
+                    Science Society. Below are a few pictures of me in action: A national day event I help organise for
+                    the Singpore Club, which we partnered with the Singapore Global Network and a rowing regatta held in
+                    Whanganui I
+                    competed in. Please feel free to reach out!
+                </p>
+                <img src="rowing.jpg" alt="My art">
+            </div>
         </section>
 
         <section id="portfolio">
