@@ -20,8 +20,14 @@
         }
 
         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
         }
+
 
 
 
@@ -34,7 +40,7 @@
             height: 180vh;
             width: 250px;
             position: fixed;
-            top: -500px;
+            top: -550px;
             left: -10px;
             background-color: white;
             padding: 1rem;
@@ -68,7 +74,8 @@
 
         /* Section styling */
         section {
-            padding-bottom: 4rem;
+            padding-top: 6rem;
+            padding-bottom: 7rem;
             text-align: center;
         }
 
@@ -88,22 +95,11 @@
 
 
 
-        /* Footer styling */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
         #opening img {
-            width: 800px;
+            width: 600px;
             height: 1020px;
             transform: rotate(-90deg);
-            margin-top: -100px;
+            margin-top: -200px;
             object-fit: cover;
 
         }
@@ -113,6 +109,7 @@
             flex-direction: row;
             /* Default row direction */
             align-items: flex-start;
+            padding: 2rem;
         }
 
         #about img {
@@ -163,6 +160,7 @@
             height: auto;
         }
 
+
         #portfolio img {
             max-width: 150px;
             /* Adjust the width as needed */
@@ -182,6 +180,34 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             /* Add some spacing below the name */
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            margin-left: 38%;
+
+
+
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .project {
+            flex: 0 0 300px;
+            margin-right: 10px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -207,7 +233,7 @@
         </section>
 
         <section id="about">
-            <img src="pfp.jpg" alt="My art">
+
             <div>
                 <h1>About Me</h1>
                 <p>Hi there! I'm Stella, a second year Computer Science student at Otago University. I enjoy coding in
@@ -228,38 +254,31 @@
         </section>
 
         <section id="portfolio">
-            <h1>Portfolio</h1>
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-                <p>Description of Project 1.</p>
-            </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h2>Project 2</h2>
-                <p>Description of Project 2.</p>
-            </div>
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-                <p>Description of Project 1.</p>
-            </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h2>Project 2</h2>
-                <p>Description of Project 2.</p>
-            </div>
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-                <p>Description of Project 1.</p>
-            </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h2>Project 2</h2>
-                <p>Description of Project 2.</p>
+            <h1>Projects</h1>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <div class="project">
+                        <img src="project1.jpg" alt="Project 1">
+                        <h2>Project 1</h2>
+                        <p>Description of Project 1.</p>
+                    </div>
+                    <div class="project">
+                        <img src="project2.jpg" alt="Project 2">
+                        <h2>Project 2</h2>
+                        <p>Description of Project 2.</p>
+                    </div>
+                    <div class="project">
+                        <img src="project3.jpg" alt="Project 3">
+                        <h2>Project 3</h2>
+                        <p>Description of Project 3.</p>
+                    </div>
+                </div>
             </div>
             <!-- Add more projects as needed -->
+            <div class="button-container">
+                <button onclick="showProject(-1)">Previous</button>
+                <button onclick="showProject(1)">Next</button>
+            </div>
         </section>
 
         <section id="contact">
@@ -270,6 +289,17 @@
     </div>
 
 
+
+    <script>
+        const carouselContainer = document.querySelector(".carousel-container");
+        let currentIndex = 0;
+        const projectCount = 3;
+
+        function showProject(step) {
+            currentIndex = (currentIndex + step + projectCount) % projectCount;
+            carouselContainer.style.transform = `translateX(-${currentIndex * 310}px)`;
+        }
+    </script>
 </body>
 
 </html>
