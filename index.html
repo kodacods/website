@@ -111,8 +111,8 @@
         #about {
             display: flex;
             flex-direction: row;
-            /* Reverse the order of text and image */
-            align-items: normal;
+            /* Default row direction */
+            align-items: flex-start;
         }
 
         #about img {
@@ -126,7 +126,7 @@
         }
 
         /* Adjustments for heading and text */
-        #about div {
+        #about .text {
             display: flex;
             flex-direction: column;
         }
@@ -141,6 +141,20 @@
             margin: 0;
             margin-top: 0.2rem;
             /* Add some spacing between heading and text */
+        }
+
+        #about .images {
+            margin-top: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        #about .images img {
+            max-width: 400px;
+            /* Adjust the width as needed */
+            height: 200px;
+
+            /* Add some spacing between images */
         }
 
         #contact img {
@@ -205,7 +219,11 @@
                     Whanganui I
                     competed in. Please feel free to reach out!
                 </p>
-                <img src="rowing.jpg" alt="My art">
+
+                <div class="images">
+                    <img src="rowing.jpg" alt="My rowing">
+                    <img src="nd.JPG" alt="ND">
+                </div>
             </div>
         </section>
 
