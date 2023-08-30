@@ -96,26 +96,33 @@
             width: 100%;
         }
 
-        .photo img {
-            display: flex;
-            flex-direction: column;
-            max-width: 100%;
-            height: auto;
+        #opening img {
+            width: 800px;
+            height: 1020px;
             transform: rotate(-90deg);
-            margin-left: 520px;
             margin-top: -100px;
-            align-items: center;
-            /* Adjust the value as needed */
 
-            /* Rotate by 45 degrees */
 
         }
 
-        .content img {
+        #about img {
             max-width: 150px;
             /* Adjust the width as needed */
             height: auto;
         }
+
+        #contact img {
+            max-width: 150px;
+            /* Adjust the width as needed */
+            height: auto;
+        }
+
+        #portfolio img {
+            max-width: 150px;
+            /* Adjust the width as needed */
+            height: auto;
+        }
+
 
         .sidebar img {
             max-width: 100px;
@@ -135,9 +142,7 @@
 
 <body>
 
-    <div class="photo">
-        <img src="myphoto.jpg" alt="My Photo">
-    </div>
+
 
     <div class="sidebar">
         <img src="s2.png" alt="My pfp">
@@ -151,6 +156,10 @@
 
 
     <div class="content">
+        <section id="opening">
+            <img src="myphoto.jpg" alt="My Photo">
+        </section>
+
         <section id="about">
             <img src="pfp.jpg" alt="My art">
             <h1>About Me</h1>
