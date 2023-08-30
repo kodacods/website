@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Homemade+Apple&family=Roboto+Condensed&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset some default styling */
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        /* Sidebar styling */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 180vh;
+            width: 250px;
+            position: fixed;
+            top: -500px;
+            left: -10px;
+            background-color: white;
+            padding: 1rem;
+            border: 6px double #b80606
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .sidebar li {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+            font-weight: 300;
+            font-size: 1.2rem;
+            font-family: 'Herr Von Muellerhoff', cursive;
+            font-family: 'Homemade Apple', cursive;
+
+        }
+
+        /* Content styling */
+        .content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        /* Section styling */
+        section {
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Herr Von Muellerhoff', cursive;
+            font-family: 'Homemade Apple', cursive;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .photo img {
+            max-width: 100%;
+            height: auto;
+            transform: rotate(-90deg);
+            margin-left: 520px;
+            margin-top: -100px;
+            /* Adjust the value as needed */
+
+            /* Rotate by 45 degrees */
+
+        }
+
+        .content img {
+            max-width: 150px;
+            /* Adjust the width as needed */
+            height: auto;
+        }
+
+        .sidebar img {
+            max-width: 100px;
+            /* Adjust the width as needed */
+            height: auto;
+            margin-bottom: 0.5rem;
+            /* Add some spacing below the image */
+        }
+
+        .sidebar .name {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            /* Add some spacing below the name */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="photo">
+        <img src="myphoto.jpg" alt="My Photo">
+    </div>
+
+    <div class="sidebar">
+        <img src="s2.png" alt="My pfp">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="content">
+        <section id="about">
+            <img src="pfp.jpg" alt="My art">
+            <h1>About Me</h1>
+            <p>Write a brief introduction about yourself here.</p>
+        </section>
+
+        <section id="portfolio">
+            <h1>Portfolio</h1>
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h2>Project 2</h2>
+                <p>Description of Project 2.</p>
+            </div>
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h2>Project 2</h2>
+                <p>Description of Project 2.</p>
+            </div>
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h2>Project 2</h2>
+                <p>Description of Project 2.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+
+        <section id="contact">
+            <img src="art.jpg" alt="My art">
+            <h1>Contact Me</h1>
+            <p>You can reach me at: stella.yan179@gmail.com</p>
+        </section>
+    </div>
+
+
+</body>
+
+</html>
