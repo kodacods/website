@@ -99,19 +99,13 @@
             width: 700px;
             height: 1020px;
             transform: rotate(-90deg);
-            margin-top: -22%;
+            margin-top: -250px;
+
             object-fit: cover;
 
         }
 
-        #about {
-            display: flex;
-            flex-direction: row;
-            /* Default row direction */
-            align-items: flex-start;
-            padding: 2rem;
-            margin-top: 10%;
-        }
+
 
         #about img {
             max-width: 150px;
@@ -141,18 +135,31 @@
             /* Add some spacing between heading and text */
         }
 
-        #about .images {
-            margin-top: 10%;
+        #about {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2%;
+        }
+
+        #about .about-content {
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        #about .images {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
 
-        #about .images img {
-            max-width: 500px;
-            /* Adjust the width as needed */
-            height: 300px;
-
-            /* Add some spacing between images */
+        #about img {
+            max-width: 300px;
+            height: auto;
+            margin: 0 10px;
         }
 
         #contact img {
@@ -188,10 +195,9 @@
             overflow: hidden;
             width: 300px;
             height: 200px;
-            margin-left: 38%;
-
-
-
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2rem;
         }
 
         .carousel-container {
@@ -209,6 +215,13 @@
         .button-container {
             margin-top: 10px;
             text-align: center;
+        }
+
+        .centered-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -230,7 +243,7 @@
 
     <div class="content">
         <section id="opening">
-            <img src="myphoto.jpg" alt="My Photo">
+            <img src="myphoto.jpg" alt="My Photo" class="centered-image">
         </section>
 
         <section id="about">
@@ -260,22 +273,28 @@
                 <div class="carousel-container">
                     <div class="project">
                         <img src="project1.jpg" alt="Project 1">
-                        <h2>Project 1</h2>
-                        <p>Description of Project 1.</p>
+                        <h2>Calorie Intake App</h2>
+                        <p>Using React, I coded a calorie tracker which was useful when I was trying to do a cut while
+                            gyming</p>
                     </div>
                     <div class="project">
                         <img src="project2.jpg" alt="Project 2">
-                        <h2>Project 2</h2>
-                        <p>Description of Project 2.</p>
+                        <h2>Birds of NewZealand Website</h2>
+                        <p>Description of our native birds and their various conservation statuses </p>
                     </div>
                     <div class="project">
-                        <img src="project3.jpg" alt="Project 3">
-                        <h2>Project 3</h2>
-                        <p>Description of Project 3.</p>
+                        <img src="project3.png" alt="Project 3">
+                        <h2>Image Editor App</h2>
+                        <p>This was a group project at University where we used java swing to create a functional image
+                            editor</p>
+                    </div>
+                    <div class="project">
+                        <img src="project4.png" alt="Project 4">
+                        <h2>Blackjack Game</h2>
+                        <p>Using React and Vite I made a fun Blackjack game</p>
                     </div>
                 </div>
             </div>
-            <!-- Add more projects as needed -->
             <div class="button-container">
                 <button onclick="showProject(-1)">Previous</button>
                 <button onclick="showProject(1)">Next</button>
@@ -294,7 +313,7 @@
     <script>
         const carouselContainer = document.querySelector(".carousel-container");
         let currentIndex = 0;
-        const projectCount = 3;
+        const projectCount = 4;
 
         function showProject(step) {
             currentIndex = (currentIndex + step + projectCount) % projectCount;
