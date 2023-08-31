@@ -370,7 +370,7 @@
         <section id="contact">
             <img src="art.jpg" alt="My art">
             <h1>Contact Me</h1>
-            <p><a href="#" id="copyEmail">Email</a></p>
+            <p><a href="#" id="copyEmail">stella.yan179@gmail.com</a></p>
             <p> <a href="https://www.linkedin.com/in/stella-yan-589b6a250/" class="red-link">My LinkedIn</a></p>
             <p><a href="https://github.com/kodacods/" class="red-link">Personal Github</a></p>
         </section>
@@ -402,6 +402,33 @@
             const clickedLink = document.getElementById(linkId);
             clickedLink.classList.add('active');
         }
+
+        const copyEmailLink = document.getElementById('copyEmail');
+        copyEmailLink.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const emailText = copyEmailLink.textContent; // Get the text content without "mailto:"
+
+            // Create a temporary text input element
+            const tempInput = document.createElement('textarea');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+
+            // Select and copy the text from the input element
+            tempInput.select();
+            document.execCommand('copy');
+
+            // Remove the temporary input element
+            document.body.removeChild(tempInput);
+
+            // Update the link text to indicate successful copying
+            copyEmailLink.innerText = 'Email copied!';
+
+            // Reset the link text after a short delay (e.g., 2 seconds)
+            setTimeout(() => {
+                copyEmailLink.innerText = emailText;
+            }, 2000);
+        });
     </script>
 </body>
 
