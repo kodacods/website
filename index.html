@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Homemade+Apple&family=Roboto+Condensed:wght@300;400&display=swap"
         rel="stylesheet">
+
+
     <style>
         /* Reset some default styling */
+        /* Small devices (phones) */
+
+
         body,
         h1,
         h2,
@@ -35,14 +41,15 @@
 
         /* Sidebar styling */
         .sidebar {
+            flex: 0 0 15%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 200vh;
-            width: 15%;
+
             position: fixed;
-            top: -65%;
+            top: -75%;
             left: -10px;
             background-color: white;
             padding: 1rem;
@@ -75,6 +82,7 @@
 
         /* Content styling */
         .content {
+            flex: 1 1 75%;
             margin-left: 250px;
             padding: 2rem;
         }
@@ -282,101 +290,115 @@
             max-width: 100%;
             height: auto;
         }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
 <body>
 
+    <div class="container">
 
-
-    <div class="sidebar">
-        <img src="s2.png" alt="My pfp">
-        <ul>
-            <li><a id="portfolioLink" href="#portfolio" onclick="toggleActive('portfolioLink')">Projects</a></li>
-            <li><a id="aboutLink" href="#about" onclick="toggleActive('aboutLink')">About Me</a></li>
-            <li><a id="contactLink" href="#contact" onclick="toggleActive('contactLink')">Contact</a></li>
-        </ul>
-    </div>
-
-
-
-    <div class="content">
+        <div class="sidebar">
+            <img src="s2.png" alt="My pfp">
+            <ul>
+                <li><a id="portfolioLink" href="#portfolio" onclick="toggleActive('portfolioLink')">Projects</a></li>
+                <li><a id="aboutLink" href="#about" onclick="toggleActive('aboutLink')">About Me</a></li>
+                <li><a id="contactLink" href="#contact" onclick="toggleActive('contactLink')">Contact</a></li>
+            </ul>
+        </div>
 
 
 
+        <div class="content">
 
-        <section id="portfolio">
-            <h1>Projects</h1>
-            <div class="carousel">
-                <div class="carousel-container">
-                    <div class="project">
-                        <img src="project1.jpg" alt="Project 1">
-                        <h2>Calorie Intake App</h2>
-                        <p>Using React, I coded a calorie tracker which was useful when I was trying to do a cut while
-                            gyming</p>
-                    </div>
-                    <div class="project2">
-                        <img src="p2.jpg" alt="Project 2">
-                        <h2>Birds of NewZealand Website</h2>
-                        <p>Description of our native birds and their various conservation statuses </p>
-                    </div>
-                    <div class="project2">
-                        <img src="project3.png" alt="Project 3">
-                        <h2>Image Editor App</h2>
-                        <p>This was a group project at University where we used java swing to create a functional image
-                            editor</p>
-                    </div>
-                    <div class="project3">
-                        <img src="project4.png" alt="Project 4">
-                        <h2>Blackjack Game</h2>
-                        <p>Using React and Vite I made a fun Blackjack game</p>
+
+
+
+            <section id="portfolio">
+                <h1>Projects</h1>
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <div class="project">
+                            <img src="project1.jpg" alt="Project 1">
+                            <h2>Calorie Intake App</h2>
+                            <p>Using React, I coded a calorie tracker which was useful when I was trying to do a cut
+                                while
+                                gyming</p>
+                        </div>
+                        <div class="project2">
+                            <img src="p2.jpg" alt="Project 2">
+                            <h2>Birds of NewZealand Website</h2>
+                            <p>Description of our native birds and their various conservation statuses </p>
+                        </div>
+                        <div class="project2">
+                            <img src="project3.png" alt="Project 3">
+                            <h2>Image Editor App</h2>
+                            <p>This was a group project at University where we used java swing to create a functional
+                                image
+                                editor</p>
+                        </div>
+                        <div class="project3">
+                            <img src="project4.png" alt="Project 4">
+                            <h2>Blackjack Game</h2>
+                            <p>Using React and Vite I made a fun Blackjack game</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="button-container">
-                <button onclick="showProject(-1)">Previous</button>
-                <button onclick="showProject(1)">Next</button>
-            </div>
-        </section>
-
-        <section id="about">
-
-            <div>
-                <h1>About Me</h1>
-                <p>Hi there! I'm Stella, a second year Computer Science student at Otago University. I enjoy coding in
-                    my free time as well as
-                    painting,chess and sports. I like creating various projects using React, Javascript, HTML, CSS and
-                    Java/JS. At
-                    University I
-                    had fun learning about databases/Mysql and C, as well as using Git and CI/CD pipelines in team
-                    projects. I am currently teaching myself Python and C++ and am looking forward to learning more. I
-                    enjoy taking my learning outisde of University, such as getting Azure and SafeStack certified.
-                </p>
-                <p>
-                    I am an executive member for the Otago Singpore Club and the Otago
-                    Computer
-                    Science Society. Below are a few pictures of me in action: A national day event I help organise for
-                    the Singpore Club, which we partnered with the Singapore Global Network and a rowing regatta held in
-                    Whanganui I
-                    competed in. Please feel free to reach out!
-                </p>
-
-                <div class="images">
-                    <img src="rowing.jpg" alt="My rowing">
-                    <img src="nd.JPG" alt="ND">
+                <div class="button-container">
+                    <button onclick="showProject(-1)">Previous</button>
+                    <button onclick="showProject(1)">Next</button>
                 </div>
-            </div>
-        </section>
-        <section id="contact">
-            <img src="art.jpg" alt="My art">
-            <h1>Contact Me</h1>
-            <p><a href="#" id="copyEmail">stella.yan179@gmail.com</a></p>
-            <p> <a href="https://www.linkedin.com/in/stella-yan-589b6a250/" class="red-link">My LinkedIn</a></p>
-            <p><a href="https://github.com/kodacods/" class="red-link">Personal Github</a></p>
-        </section>
+            </section>
 
+            <section id="about">
+
+                <div>
+                    <h1>About Me</h1>
+                    <p>Hi there! I'm Stella, a second year Computer Science student at Otago University. I enjoy coding
+                        in
+                        my free time as well as
+                        painting,chess and sports. I like creating various projects using React, Javascript, HTML, CSS
+                        and
+                        Java/JS. At
+                        University I
+                        had fun learning about databases/Mysql and C, as well as using Git and CI/CD pipelines in team
+                        projects. I am currently teaching myself Python and C++ and am looking forward to learning more.
+                        I
+                        enjoy taking my learning outisde of University, such as getting Azure and SafeStack certified.
+                    </p>
+                    <p>
+                        I am an executive member for the Otago Singpore Club and the Otago
+                        Computer
+                        Science Society. Below are a few pictures of me in action: A national day event I help organise
+                        for
+                        the Singpore Club, which we partnered with the Singapore Global Network and a rowing regatta
+                        held in
+                        Whanganui I
+                        competed in. Please feel free to reach out!
+                    </p>
+
+                    <div class="images">
+                        <img src="rowing.jpg" alt="My rowing">
+                        <img src="nd.JPG" alt="ND">
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <img src="art.jpg" alt="My art">
+                <h1>Contact Me</h1>
+                <p><a href="#" id="copyEmail">stella.yan179@gmail.com</a></p>
+                <p> <a href="https://www.linkedin.com/in/stella-yan-589b6a250/" class="red-link">My LinkedIn</a></p>
+                <p><a href="https://github.com/kodacods/" class="red-link">Personal Github</a></p>
+            </section>
+
+        </div>
     </div>
-
 
 
     <script>
