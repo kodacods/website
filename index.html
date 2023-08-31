@@ -283,9 +283,9 @@
     <div class="sidebar">
         <img src="s2.png" alt="My pfp">
         <ul>
-            <li><a href="#portfolio">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#portfolio" onclick="scrollToSection('portfolio')">Projects</a></li>
+            <li><a href="#about" onclick="scrollToSection('about')">About Me</a></li>
+            <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
         </ul>
     </div>
 
@@ -370,6 +370,7 @@
 
 
     <script>
+
         const carouselContainer = document.querySelector(".carousel-container");
         let currentIndex = 0;
         const projectCount = 4;
@@ -378,6 +379,19 @@
             currentIndex = (currentIndex + step + projectCount) % projectCount;
             carouselContainer.style.transform = `translateX(-${currentIndex * 310}px)`;
         }
+        function scrollToSection(sectionId) {
+            console.log(`Scrolling to section: ${sectionId}`);
+            const targetSection = document.getElementById(sectionId);
+            console.log('Target section:', targetSection);
+
+            const yOffset = -60; // Adjust the offset as needed
+            const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            console.log('Scrolling to Y:', y);
+
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
     </script>
 </body>
 
