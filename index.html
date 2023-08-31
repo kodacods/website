@@ -69,6 +69,10 @@
 
         }
 
+        .sidebar a.active {
+            color: #b80606;
+        }
+
         /* Content styling */
         .content {
             margin-left: 250px;
@@ -168,6 +172,11 @@
             max-width: 150px;
             /* Adjust the width as needed */
             height: auto;
+        }
+
+        /* Change the color of contact links to red */
+        #contact a {
+            color: #b80606;
         }
 
         #contact p {
@@ -283,9 +292,9 @@
     <div class="sidebar">
         <img src="s2.png" alt="My pfp">
         <ul>
-            <li><a href="#portfolio" onclick="scrollToSection('portfolio')">Projects</a></li>
-            <li><a href="#about" onclick="scrollToSection('about')">About Me</a></li>
-            <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+            <li><a id="portfolioLink" href="#portfolio" onclick="toggleActive('portfolioLink')">Projects</a></li>
+            <li><a id="aboutLink" href="#about" onclick="toggleActive('aboutLink')">About Me</a></li>
+            <li><a id="contactLink" href="#contact" onclick="toggleActive('contactLink')">Contact</a></li>
         </ul>
     </div>
 
@@ -361,10 +370,11 @@
         <section id="contact">
             <img src="art.jpg" alt="My art">
             <h1>Contact Me</h1>
-            <p>You can reach me at: stella.yan179@gmail.com</p>
-            <a href="https://www.linkedin.com/in/stella-yan-589b6a250/">My LinkedIn</a>
-            <a href="https://github.com/kodacods/">Personal Github</a>
+            <p><a href="#" id="copyEmail">Email</a></p>
+            <p> <a href="https://www.linkedin.com/in/stella-yan-589b6a250/" class="red-link">My LinkedIn</a></p>
+            <p><a href="https://github.com/kodacods/" class="red-link">Personal Github</a></p>
         </section>
+
     </div>
 
 
@@ -379,19 +389,19 @@
             currentIndex = (currentIndex + step + projectCount) % projectCount;
             carouselContainer.style.transform = `translateX(-${currentIndex * 310}px)`;
         }
-        function scrollToSection(sectionId) {
-            console.log(`Scrolling to section: ${sectionId}`);
-            const targetSection = document.getElementById(sectionId);
-            console.log('Target section:', targetSection);
 
-            const yOffset = -60; // Adjust the offset as needed
-            const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        function toggleActive(linkId) {
+            const links = document.querySelectorAll('.sidebar a');
 
-            console.log('Scrolling to Y:', y);
+            // Remove "active" class from all links
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
 
-            window.scrollTo({ top: y, behavior: 'smooth' });
+            // Add "active" class to the clicked link
+            const clickedLink = document.getElementById(linkId);
+            clickedLink.classList.add('active');
         }
-
     </script>
 </body>
 
