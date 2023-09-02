@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Homemade+Apple&family=Roboto+Condensed:wght@300;400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
     <style>
@@ -27,7 +28,7 @@
 
         body {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
             margin: 0;
@@ -37,7 +38,25 @@
         }
 
 
+        #scrollToTopButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #b80606;
+            color: white;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        }
 
+        #scrollToTopButton i {
+            line-height: 40px;
+        }
 
         /* Sidebar styling */
         .sidebar {
@@ -52,7 +71,7 @@
             top: -65%;
             left: -10px;
             background-color: white;
-            padding: 1rem;
+            padding: 3rem;
             border: 6px double #b80606
         }
 
@@ -83,14 +102,14 @@
         /* Content styling */
         .content {
             flex: 1 1 65%;
+
             margin-left: 250px;
-            padding: 2rem;
+
         }
 
         /* Section styling */
         section {
             padding-top: 6rem;
-            padding-bottom: 7rem;
             text-align: center;
         }
 
@@ -147,8 +166,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 2rem;
-            margin-top: 2%;
+            padding-top: 6rem;
         }
 
         #about .about-content {
@@ -307,8 +325,9 @@
         <div class="sidebar">
             <img src="s2.png" alt="My pfp">
             <ul>
-                <li><a id="portfolioLink" href="#portfolio" onclick="toggleActive('portfolioLink')">Projects</a></li>
                 <li><a id="aboutLink" href="#about" onclick="toggleActive('aboutLink')">About Me</a></li>
+                <li><a id="portfolioLink" href="#portfolio" onclick="toggleActive('portfolioLink')">Projects</a></li>
+
                 <li><a id="contactLink" href="#contact" onclick="toggleActive('contactLink')">Contact</a></li>
             </ul>
         </div>
@@ -320,41 +339,7 @@
 
 
 
-            <section id="portfolio">
-                <h1>Projects</h1>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <div class="project">
-                            <img src="project1.jpg" alt="Project 1">
-                            <h2>Calorie Intake App</h2>
-                            <p>Using React, I coded a calorie tracker which was useful when I was trying to do a cut
-                                while
-                                gyming</p>
-                        </div>
-                        <div class="project2">
-                            <img src="p2.jpg" alt="Project 2">
-                            <h2>Birds of NewZealand Website</h2>
-                            <p>Description of our native birds and their various conservation statuses </p>
-                        </div>
-                        <div class="project2">
-                            <img src="project3.png" alt="Project 3">
-                            <h2>Image Editor App</h2>
-                            <p>This was a group project at University where we used java swing to create a functional
-                                image
-                                editor</p>
-                        </div>
-                        <div class="project3">
-                            <img src="project4.png" alt="Project 4">
-                            <h2>Blackjack Game</h2>
-                            <p>Using React and Vite I made a fun Blackjack game</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="button-container">
-                    <button onclick="showProject(-1)">Previous</button>
-                    <button onclick="showProject(1)">Next</button>
-                </div>
-            </section>
+
 
             <section id="about">
 
@@ -388,6 +373,43 @@
                         <img src="nd.JPG" alt="ND">
                     </div>
                 </div>
+
+                <section id="portfolio">
+                    <h1>Projects</h1>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <div class="project">
+                                <img src="project1.jpg" alt="Project 1">
+                                <h2>Calorie Intake App</h2>
+                                <p>Using React, I coded a calorie tracker which was useful when I was trying to do a cut
+                                    while
+                                    gyming</p>
+                            </div>
+                            <div class="project2">
+                                <img src="p2.jpg" alt="Project 2">
+                                <h2>Birds of NewZealand Website</h2>
+                                <p>Description of our native birds and their various conservation statuses </p>
+                            </div>
+                            <div class="project2">
+                                <img src="project3.png" alt="Project 3">
+                                <h2>Image Editor App</h2>
+                                <p>This was a group project at University where we used java swing to create a
+                                    functional
+                                    image
+                                    editor</p>
+                            </div>
+                            <div class="project3">
+                                <img src="project4.png" alt="Project 4">
+                                <h2>Blackjack Game</h2>
+                                <p>Using React and Vite I made a fun Blackjack game</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button onclick="showProject(-1)">Previous</button>
+                        <button onclick="showProject(1)">Next</button>
+                    </div>
+                </section>
             </section>
             <section id="contact">
                 <img src="art.jpg" alt="My art">
@@ -398,6 +420,11 @@
             </section>
 
         </div>
+
+        <div id="scrollToTopButton" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
     </div>
 
 
@@ -451,6 +478,48 @@
                 copyEmailLink.innerText = emailText;
             }, 2000);
         });
+        // Show/hide the "Scroll to Top" button based on scroll position
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollToTopButton").style.display = "block";
+            } else {
+                document.getElementById("scrollToTopButton").style.display = "none";
+            }
+        };
+
+        // Scroll to the top of the page smoothly
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+
+        // Function to smoothly scroll to a target element
+        function smoothScroll(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        }
+
+        // Attach click event listeners to the links/buttons
+        document.getElementById("aboutLink").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            smoothScroll("about");
+        });
+
+        document.getElementById("portfolioLink").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            smoothScroll("portfolio");
+        });
+
+        document.getElementById("contactLink").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            smoothScroll("contact");
+        });
+
     </script>
 </body>
 
