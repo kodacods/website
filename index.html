@@ -189,6 +189,8 @@
 
         }
 
+
+
         #about p {
             margin-top: 15px;
             font-weight: 100;
@@ -340,11 +342,9 @@
 
 
 
-
-
             <section id="about">
-                <img src="pfp.jpg" alt=" pfp">
 
+                <img src="pfp.jpg" alt=" pfp">
                 <div>
                     <h1>About Me</h1>
                     <p>Hi there! I'm Stella, a second year Computer Science student at Otago University. I enjoy coding
@@ -434,7 +434,7 @@
 
         const carouselContainer = document.querySelector(".carousel-container");
         let currentIndex = 0;
-        const projectCount = 4;
+        const projectCount = 2;
 
         function showProject(step) {
             currentIndex = (currentIndex + step + projectCount) % projectCount;
